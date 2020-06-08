@@ -20,6 +20,9 @@ module.exports = {
 			filename: 'css/style.css'
 	    })
     ],
+	devServer: {
+		port: 8001,
+	},
 	module: {
 		rules: [
 			{
@@ -60,8 +63,8 @@ module.exports = {
 				test: /\.(ico|png|jpg|jpeg|gif|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'file-loader',
 				options: {
-					publicPath: '../../',
-					name: 'assets/images/[name].[ext]',
+					publicPath: '../',
+					name: 'images/[name].[ext]',
 					limit: 1000,
 				}
 			},
@@ -69,8 +72,8 @@ module.exports = {
 				test: /\.(woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'file-loader',
 				options: {
-					publicPath: '../../',
-					name: 'assets/fonts/[name].[ext]',
+					publicPath: '../',
+					name: 'fonts/[name].[ext]',
 					limit: 1000,
 				}
 			}

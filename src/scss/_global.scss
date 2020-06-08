@@ -1,5 +1,36 @@
 @charset "utf-8";
 
-p{
-    font-weight:bold;color:#000;
+#wrapper{
+    max-width:1500px;margin:0 auto;
+}
+.panel {
+    width: 100%;display: flex;flex-direction: column;padding:50px;color: #fff;text-shadow:0 1px 5px rgba(0,0,0,1);
+    background-color: #000;background-repeat: no-repeat;background-size: 100% auto;
+    &.one{
+        background-image: url(../images/1.jpg);height: 1002px;
+    }
+    &.two{
+        background-image: url(../images/2.jpg);height: 999px;
+    }
+    &.three{
+        background-image: url(../images/3.jpg);height: 414px;
+    }
+    &.four{
+        background-image: url(../images/4.jpg);height: 1028px;
+    }
+
+    .title{
+        span{
+            display:block;
+        }
+        .sub_text{
+            font-size:1em;
+        }
+        .main_text{
+            font-size:2.5em;width:50%;
+        }
+    }
+    .desc{
+        padding-top:30px;
+    }
 }
