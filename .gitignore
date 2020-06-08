@@ -1,0 +1,10 @@
+.idea/
+node_modules
+dist/js/styles.js
+dist/js/styles.js.map
+dist/js/common.js.map
+gsap-bonus.tgz
+
+package-lock.json
+yarn.lock
+build
