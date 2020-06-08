@@ -20,9 +20,6 @@ module.exports = {
 			filename: 'css/style.css'
 	    })
     ],
-	devServer: {
-		port: 8001,
-	},
 	module: {
 		rules: [
 			{
@@ -78,5 +75,12 @@ module.exports = {
 				}
 			}
 		],
+	},
+	devServer: {
+		contentBase: path.join(__dirname + '/dist/'),
+		inline: true,
+		hot: true,
+		host: "localhost",
+		port: 5500
 	},
 };

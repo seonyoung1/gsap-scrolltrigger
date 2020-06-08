@@ -2,7 +2,7 @@
 @mixin vw-convert-pc($property, $pc-pixel) {
 	@if type-of($pc-pixel) == number {
 		#{$property}: $pc-pixel*1px;
-		#{$property}: $pc-pixel*100/#{$screen-xlg}*1vw;
+		#{$property}: $pc-pixel*100/1500*1vw;
 		@media (min-width:$screen-xlg) {
 			#{$property}: $pc-pixel*1px;
 		}
@@ -19,7 +19,7 @@
 		@each $value in $pc-pixel {
 			@if type-of($value) == number {
 				$px: append($px, $value*1px);
-				$vw: append($vw, $value*100/#{$screen-xlg}*1vw);
+				$vw: append($vw, $value*100/1500*1vw);
 			}
 			@else if type-of($value) == string {
 				$px: append($px, auto);
