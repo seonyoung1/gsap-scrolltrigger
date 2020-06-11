@@ -7,8 +7,8 @@ window.jas = (function($) {
 	gsap.registerPlugin(ScrollTrigger);
 	ScrollTrigger.defaults({
 		toggleActions: 'restart complete resume pause', //play, pause, resume, reset, restart, complete, reverse, none
-		markers: true,
-		scrub: true,
+		// markers: true,
+		// scrub: true,
 		// onEnter: () => {
 		// 	console.log('onEnter');
 		// },
@@ -21,31 +21,57 @@ window.jas = (function($) {
 	var common = {
 		init: () => {
 
-			const twoOption = {
-				trigger: '.two',
+			const oneOption = {
+				trigger: '.one',
 				start: 'top 70%',
 				end: "bottom 20%",
+				scrub: true,
 			}
 
-			gsap.from('.two .title', {
-				scrollTrigger: twoOption,
+			gsap.from('.one .title', {
+				scrollTrigger: oneOption,
 				duration: 5,
 				y: 250,
 			});
-			gsap.from('.two .desc', {
-				scrollTrigger: twoOption,
+			gsap.from('.one .desc', {
+				scrollTrigger: oneOption,
 				duration: 3,
 				y: 300,
-			})
-
-
+			});
+			gsap.to('.two', {
+				yPercent: -100,
+				scrollTrigger:{
+					trigger: '.section',
+					start: 'top top',
+					end: '+=100%',
+					scrub: true,
+					pin: true,
+					// markers: true,
+				}
+			});
 			gsap.from('.three .title', {
 				scrollTrigger:{
 					trigger: '.three',
+					scrub: true,
 				},
 				duration: 1,
 				x: '80%',
-			})
+			});
+
+			const four = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.four',
+					start: 'top top',
+					end: '+=300%',
+					scrub: true,
+					pin: true,
+					anticipatePin: 1,
+					// markers: true,
+				}
+			});
+			four.from('.images2', { xPercent: 100 })
+				.from('.images3', { xPercent: -100 })
+
 
 		},
 	};
